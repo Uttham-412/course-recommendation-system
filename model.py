@@ -21,7 +21,9 @@ def recommend(user_query):
     
     # Get similarity scores and sort them in descending order
     distances = list(enumerate(query_similarity[0]))
-    sorted_courses = sorted(distances, key=lambda x: x[1], reverse=True)[0:6]
+    
+    # Returning top 25 courses to provide many recommendations
+    sorted_courses = sorted(distances, key=lambda x: x[1], reverse=True)[0:25]
     
     recommendations = []
     for i in sorted_courses:
